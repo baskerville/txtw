@@ -1,0 +1,1 @@
+textwidth.o: textwidth.c textwidth.h
