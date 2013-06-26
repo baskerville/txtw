@@ -1,0 +1,8 @@
+.TH "$name$" 1 "$date$" "$title$"
+.SH NAME
+$name$ - Compute text widths
+$body$
+.SH AUTHOR
+$author$ <baskerville at lavabit.com>
+.SH HOMEPAGE
+https://github.com/baskerville/$name$

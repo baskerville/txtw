@@ -1,0 +1,56 @@
+.TH "txtw" 1 "June 26, 2013" "Txtw"
+.SH NAME
+txtw - Compute text widths
+.SH SYNOPSIS
+.PP
+\f[B]txtw\f[] [\f[B]\-h\f[]|\f[B]\-v\f[]|\f[B]\-f\f[] \f[I]FONT\f[]|\f[B]\-s\f[] \f[I]SIZE\f[]|\f[B]\-F\f[] \f[I]ALT_FONT\f[]|\f[B]\-S\f[] \f[I]ALT_SIZE\f[]] \f[I]STRING\f[] ...
+.SH DESCRIPTION
+.PP
+Returns the width in pixels of the given strings for the the given font.
+.SH OPTIONS
+.TP
+.B \f[C]\-h\f[]
+Print the synopsis to standard output and exit.
+.RS
+.RE
+.TP
+.B \f[C]\-v\f[]
+Print the version information to standard output and exit.
+.RS
+.RE
+.TP
+.B \f[C]\-f\f[] \f[I]FONT\f[]
+Set the main font.
+.RS
+.RE
+.TP
+.B \f[C]\-s\f[] \f[I]SIZE\f[]
+Set the size of the main font.
+.RS
+.RE
+.TP
+.B \f[C]\-F\f[] \f[I]ALT_FONT\f[]
+Set the alternate font.
+.RS
+.RE
+.TP
+.B \f[C]\-S\f[] \f[I]ALT_SIZE\f[]
+Set the size of the alternate font.
+.RS
+.RE
+.SH STRING SYNTAX
+.PP
+By default the main font is used to compute the width.
+.PP
+The alternate font is used for the parts of the string enclosed between \f[I]\\(\f[] and \f[I]\\)\f[].
+.SH EXAMPLE
+.IP
+.nf
+\f[C]
+txtw\ \-f\ \[aq]DejaVu\ Sans\[aq]\ \-s\ 11\ \-F\ SimpleIcons\ \-S\ 16\ \[aq]One\ \\(U\\)\ Two\ \\(D\\)\ Three\[aq]\ 
+\f[]
+.fi
+.SH AUTHOR
+Bastien Dejean <baskerville at lavabit.com>
+.SH HOMEPAGE
+https://github.com/baskerville/txtw
