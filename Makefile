@@ -1,4 +1,4 @@
-NAME = txtw
+NAME    = txtw
 VERSION = 0.2
 
 CC       = gcc
@@ -9,6 +9,7 @@ LDFLAGS += -L$(PREFIX)/lib
 
 PREFIX    ?= /usr/local
 BINPREFIX  = $(PREFIX)/bin
+MANPREFIX  = $(PREFIX)/share/man
 
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
@@ -25,14 +26,17 @@ $(OBJ): Makefile
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJ)
-	 $(CC) -o $@ $(OBJ) $(LDFLAGS) $(LIBS)
+	$(CC) -o $@ $(OBJ) $(LDFLAGS) $(LIBS)
 
 install:
 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
 	cp -p $(NAME) "$(DESTDIR)$(BINPREFIX)"
+	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
+	cp -p $(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
 
 uninstall:
 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(NAME)
+	rm -f "$(DESTDIR)$(MANPREFIX)/"man1/$(NAME).1
 doc:
 	pandoc --no-wrap -t json doc/README.md | runhaskell doc/man_filter.hs | pandoc --no-wrap -f json -t man --template doc/man.template -V name=$(NAME) -o $(NAME).1
 	pandoc --no-wrap -f markdown -t asciidoc doc/README.md -o README.asciidoc
