@@ -37,9 +37,9 @@ install:
 uninstall:
 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(NAME)
 	rm -f "$(DESTDIR)$(MANPREFIX)/"man1/$(NAME).1
+
 doc:
-	pandoc --no-wrap -t json doc/README.md | runhaskell doc/man_filter.hs | pandoc --no-wrap -f json -t man --template doc/man.template -V name=$(NAME) -o $(NAME).1
-	pandoc --no-wrap -f markdown -t asciidoc doc/README.md -o README.asciidoc
+	a2x -v -d manpage -f manpage -a revnumber=$(VERSION) doc/$(NAME).1.txt
 
 clean:
 	rm -f $(OBJ) $(NAME)
