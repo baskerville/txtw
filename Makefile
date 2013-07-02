@@ -32,7 +32,7 @@ install:
 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
 	cp -p $(NAME) "$(DESTDIR)$(BINPREFIX)"
 	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
-	cp -p $(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
+	cp -p doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
 
 uninstall:
 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(NAME)
