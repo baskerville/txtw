@@ -58,7 +58,7 @@ txtw -f 'DejaVu Sans' -s 11 -F SimpleIcons -S 16 'One \(U\) Two \(D\) Three'
 Author
 ------
 
-Bastien Dejean <baskerville at lavabit.com>
+Bastien Dejean <nihilhill at gmail.com>
 
 ////
 vim: set ft=asciidoc:
