@@ -1,5 +1,5 @@
 NAME    = txtw
-VERSION = 0.3
+VERSION = 0.4
 
 CC      ?= gcc
 LIBS     = -lm -lcairo
