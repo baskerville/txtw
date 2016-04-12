@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     int font_size = FONT_SIZE;
     char *alt_font_family = NULL;
     int alt_font_size = FONT_SIZE;
-    char opt;
+    int opt;
 
     while ((opt = getopt(argc, argv, "hvf:s:F:S:")) != -1) {
         switch (opt) {
